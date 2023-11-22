@@ -5,249 +5,269 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CineView</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-        *{
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-            text-decoration: none;
-            scroll-behavior: smooth;
-        }
-        body{
-            width: 100vw;
-            min-height: 100vh;
-            height: 100%;
-            padding: 1px;
-            background: linear-gradient(to bottom,#343e4b,#111821);
-            overflow-x: hidden;
-            background-repeat: no-repeat;
-        }
-        nav{
-            width: 100%;
-            text-align: center;
-            font-size: 2rem;
-            font-weight: 600;
-            background: rgb(22, 22, 22);
-            color: #FF7622;
-            position: sticky;
-            top: 0px;
-            z-index: 5;
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 30px;
-        }
-        nav input{
-            width: 260px;
-            border-radius: 7px;
-            padding: 10px 20px;
-            border: 1px solid rgba(255, 255, 255, 0.323);
-            color: white;
-            background: none;
-            outline: none;
-        }
-        .container{
-            margin: 10px auto;
-            width: 94%;
-            display: flex;
-            align-items: center;
-            justify-content: left;
-            gap: 30px;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
-        .content-item{
-            width: 255px;
-            height: 350px;
-            border-top-right-radius: 10px;
-            border-top-left-radius: 10px;
-            box-shadow: 0px 0px 10px 5px rgb(0,0,0,0.1);
-            background-position: center;
-            background-size: cover;
-        }
-        .movie{
-            width: 255px;
-            border-radius: 10px;
-            transition: 1.1s;
-            position: relative;
-        }
-        .movie:hover{
-            transition: 0.4s;
-            scale: 1.05;
-        }
-        .title-block{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            height: 80px;
-            background: rgb(12, 12, 12);
-            padding: 0px 15px;
-            border-bottom-right-radius: 10px;
-            border-bottom-left-radius: 10px;
-        }
-        .movie-title{
-            width: 80%;
-            padding: 0px 5px;
-            color: white;
-        }
-        .movie-rating{
-            width: 20%;
-            background: rgb(73, 73, 73);
-            padding: 5px 8px;
-            border-radius: 5px;
-            text-align: center;
-        }
-        .green{
-            color: #4BFF2F;
-        }
-        .orange{
-            color: #FFE50C ;
-        }
-        .red{
-            color: #FF430C ;
-        }
-        .over-view{
-            height: fit-content;
-            max-height: 300px;
-            background: rgba(0, 0, 0, 0.275);
-            color: rgb(255, 255, 255);
-            backdrop-filter: blur(20px);
-            padding: 20px;
-            position: absolute;
-            bottom: 00px;
-            z-index: 1;
-            text-align: justify;
-            overflow-y: scroll;
-            display: none;
-            transform: translateY(0px);
-            font-size: 15px;
-            font-weight: 300;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-        }
-        .over-view {
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+        text-decoration: none;
+        scroll-behavior: smooth;
+      }
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        height: 100%;
+        padding: 1px;
+        background: linear-gradient(to bottom, #343e4b, #111821);
+        overflow-x: hidden;
+        background-repeat: no-repeat;
+      }
+      nav {
+        width: 100%;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 600;
+        background: rgb(22, 22, 22);
+        color: #ff7622;
+        position: sticky;
+        top: 0px;
+        z-index: 5;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 30px;
+      }
+      nav input {
+        width: 260px;
+        border-radius: 7px;
+        padding: 10px 20px;
+        border: 1px solid rgba(255, 255, 255, 0.323);
+        color: white;
+        background: none;
+      }
+      .container {
+        margin: 10px auto;
+        width: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        gap: 30px;
+        flex-wrap: wrap;
+        padding: 20px;
+      }
+      .content-item {
+        width: 255px;
+        height: 350px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        box-shadow: 0px 0px 10px 5px rgb(0, 0, 0, 0.1);
+        background-position: center;
+        background-size: cover;
+      }
+      .movie {
+        width: 255px;
+        border-radius: 10px;
+        transition: 1.1s;
+        position: relative;
+      }
+      .movie:hover {
+        transition: 0.4s;
+        scale: 1.05;
+      }
+      .title-block {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 80px;
+        background: rgb(12, 12, 12);
+        padding: 0px 15px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+      .movie-title {
+        width: 80%;
+        padding: 0px 5px;
+        color: white;
+      }
+      .movie-rating {
+        width: 20%;
+        background: rgb(73, 73, 73);
+        padding: 5px 8px;
+        border-radius: 5px;
+        text-align: center;
+      }
+      .green {
+        color: #4bff2f;
+      }
+      .orange {
+        color: #ffe50c;
+      }
+      .red {
+        color: #ff430c;
+      }
+      .over-view {
+        height: fit-content;
+        max-height: 300px;
+        background: rgba(0, 0, 0, 0.275);
+        color: rgb(255, 255, 255);
+        backdrop-filter: blur(20px);
+        padding: 20px;
+        position: absolute;
+        bottom: 00px;
+        z-index: 1;
+        text-align: justify;
+        overflow-y: scroll;
+        display: none;
+        transform: translateY(0px);
+        font-size: 15px;
+        font-weight: 300;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      .over-view {
         scrollbar-width: thin;
         scrollbar-color: #000000 #dfe9eb00;
-        }
+      }
 
-        .over-view::-webkit-scrollbar {
+      .over-view::-webkit-scrollbar {
         height: 10px;
         width: 10px;
-        }
-        .over-view::-webkit-scrollbar-track {
+      }
+      .over-view::-webkit-scrollbar-track {
         border-radius: 5px;
         background-color: #dfe9eb00;
-        }
+      }
 
-        .over-view::-webkit-scrollbar-track:hover {
+      .over-view::-webkit-scrollbar-track:hover {
         background-color: #b8c0c200;
-        }
+      }
 
-        .over-view::-webkit-scrollbar-track:active {
+      .over-view::-webkit-scrollbar-track:active {
         background-color: #b8c0c200;
-        }
+      }
 
-        .over-view::-webkit-scrollbar-thumb {
+      .over-view::-webkit-scrollbar-thumb {
         border-radius: 5px;
         background-color: #00000025;
-        }
+      }
 
-        .over-view::-webkit-scrollbar-thumb:hover {
+      .over-view::-webkit-scrollbar-thumb:hover {
         background-color: #00000025;
-        }
+      }
 
-        .over-view::-webkit-scrollbar-thumb:active {
+      .over-view::-webkit-scrollbar-thumb:active {
         background-color: #00000025;
-        }
+      }
 
-        .movie:hover .over-view{
-            display: block;
-            animation: moreinfo 0.3s ease-in-out;
+      .movie:hover .over-view {
+        display: block;
+        animation: moreinfo 0.3s ease-in-out;
+      }
+      @keyframes moreinfo {
+        from {
+          opacity: 0;
+          transform: translateY(150px);
         }
-        @keyframes moreinfo {
-            from{
-                opacity: 0;
-                transform: translateY(150px);
-            }
-            to{
-                opacity: 1;
-                transform: translateY(0px);
-            }
+        to {
+          opacity: 1;
+          transform: translateY(0px);
         }
-        .story{
-            background: #ffffff;
-            color: rgb(0, 0, 0);
-            width: fit-content;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
+      }
+      .story {
+        background: #ffffff;
+        color: rgb(0, 0, 0);
+        width: fit-content;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
     </style>
   </head>
   <body>
     <nav>
-        <p>CineView</p>
-        <input type="search" placeholder="Search Movie" id="search-engine" autofocus>
+      <p>CineView</p>
+      <form id="search-engine">
+        <input type="search" id="search" placeholder="Search Movie" autofocus />
+      </form>
     </nav>
-    <div class="container" id="container">
-        
-    </div>
+    <div class="container" id="container"></div>
     <script>
-      let emptyArray = [];
-      fetch("https://api.themoviedb.org/3/discover/movie?api_key=6a63466bd16b2f9626f41e66cf666555")
-        .then((UrlStatus) => UrlStatus.json())
-        .then(
-          (UrlData) => (
-            (emptyArray = UrlData.results), console.table(UrlData.results),
-            UI_Container(emptyArray)
-          )
-        );
+      const search = document.getElementById("search");
+      // let emptyArray = [];
+      // fetch(
+      //   "https://api.themoviedb.org/3/discover/movie?api_key=6a63466bd16b2f9626f41e66cf666555"
+      // )
+      //   .then((UrlStatus) => UrlStatus.json())
+      //   .then(
+      //     (UrlData) => (
+      //       (emptyArray = UrlData.results),
+      //       console.table(UrlData.results),
+      //       UI_Container(emptyArray)
+      //     )
+      //   );
+
+      const API_URL =
+        "https://api.themoviedb.org/3/discover/movie?api_key=6a63466bd16b2f9626f41e66cf666555";
+
+      const SEARCH_API =
+        "https://api.themoviedb.org/3/search/movie?api_key=6a63466bd16b2f9626f41e66cf666555&query='";
+
+      async function getMovies(url) {
+        const res = await fetch(url);
+        const data = await res.json();
+        UI_Container(data.results);
+      }
+
+      getMovies(API_URL);
+
       let container = document.getElementById("container");
       let SearchEngine = document.getElementById("search-engine");
-      SearchEngine.addEventListener("input", function (e){
-        for( i=0; i<emptyArray.length; i++){
-            let TheMovieContent = container.children[i];
-            let SearchKey = SearchEngine.value.toLowerCase();
-            let wantedKey = emptyArray[i].original_title.toLowerCase();
-            if(wantedKey.includes(SearchKey)){
-                TheMovieContent.style.display ="block";
-            }
-            else{
-                TheMovieContent.style.display ="none";
-            }
-        }
-      })
-      function UI_Container(element){
-          let movie_title = element.map( (target) =>{
-              return ` 
+
+      function UI_Container(element) {
+        let movie_title = element.map((target) => {
+          return `
               <div class='movie'>
-                <div class='content-item' style="background:url(https://image.tmdb.org/t/p/w500/${target.poster_path});background-position: center;background-size: cover;"></div>
-                <div class='title-block'> <p class='movie-title'>${target.original_title}</p> <p class='movie-rating ${RatingColoring(target.vote_average)}'>${target.vote_average}</p></div>
-                <div class='over-view'> 
+                <div class='content-item' style="background:url(https://image.tmdb.org/t/p/w500/${
+                  target.poster_path
+                });background-position: center;background-size: cover;"></div>
+                <div class='title-block'> <p class='movie-title'>${
+                  target.original_title
+                }</p> <p class='movie-rating ${RatingColoring(
+            target.vote_average
+          )}'>${target.vote_average}</p></div>
+                <div class='over-view'>
                     <h3 class='story'>Overview</h3>  <br>
                     <p>
-                        ${target.overview} 
-                    </p>  
+                        ${target.overview}
+                    </p>
                 </div>
-              </div> 
-                  `
-          } )
-          container.innerHTML = movie_title.join("");
+              </div>
+                  `;
+        });
+        container.innerHTML = movie_title.join("");
       }
-      function RatingColoring(rates){
-        if(rates>8){
-            return 'green';
-        }
-        else if(rates > 7 && rates < 8){
-            return 'orange';
-        }
-        else{
-            return 'red';
+      function RatingColoring(rates) {
+        if (rates > 8) {
+          return "green";
+        } else if (rates > 7 && rates < 8) {
+          return "orange";
+        } else {
+          return "red";
         }
       }
-      
-      
+
+      SearchEngine.addEventListener("submit", function (e) {
+        e.preventDefault();
+        searchTerm = search.value;
+        console.log(searchTerm);
+
+        if (searchTerm && searchTerm !== "") {
+          getMovies(SEARCH_API + searchTerm);
+          search.value = "";
+        } else {
+          window.location.reload();
+        }
+      });
     </script>
   </body>
 </html>
-
