@@ -10,9 +10,9 @@
         margin: 0px;
         padding: 0px;
         box-sizing: border-box;
-        font-family: "Roboto", sans-serif;
         text-decoration: none;
         scroll-behavior: smooth;
+        outline: none;
       }
       body {
         width: 100vw;
@@ -22,28 +22,15 @@
         background: linear-gradient(to bottom, #343e4b, #111821);
         overflow-x: hidden;
         background-repeat: no-repeat;
-      }
-      nav {
-        width: 100%;
-        text-align: center;
-        font-size: 2rem;
-        font-weight: 600;
-        background: rgb(22, 22, 22);
-        color: #ff7622;
-        position: sticky;
-        top: 0px;
-        z-index: 5;
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 30px;
+        font-family: "Roboto", sans-serif;
       }
       nav input {
         width: 260px;
         border-radius: 7px;
         padding: 10px 20px;
         border: 1px solid rgba(255, 255, 255, 0.323);
-        color: white;
-        background: none;
+        color: rgb(0, 0, 0);
+        background: #ffffff;
       }
       .container {
         margin: 10px auto;
@@ -182,6 +169,7 @@
         border-radius: 5px;
       }
     </style>
+    <link rel="stylesheet" href="./font.css">
   </head>
   <body>
     <nav>
@@ -193,19 +181,6 @@
     <div class="container" id="container"></div>
     <script>
       const search = document.getElementById("search");
-      // let emptyArray = [];
-      // fetch(
-      //   "https://api.themoviedb.org/3/discover/movie?api_key=6a63466bd16b2f9626f41e66cf666555"
-      // )
-      //   .then((UrlStatus) => UrlStatus.json())
-      //   .then(
-      //     (UrlData) => (
-      //       (emptyArray = UrlData.results),
-      //       console.table(UrlData.results),
-      //       UI_Container(emptyArray)
-      //     )
-      //   );
-
       const API_URL =
         "https://api.themoviedb.org/3/discover/movie?api_key=6a63466bd16b2f9626f41e66cf666555";
 
@@ -256,14 +231,11 @@
         }
       }
 
-      SearchEngine.addEventListener("submit", function (e) {
+      search.addEventListener("input", function (e) {
         e.preventDefault();
         searchTerm = search.value;
-        console.log(searchTerm);
-
         if (searchTerm && searchTerm !== "") {
           getMovies(SEARCH_API + searchTerm);
-          search.value = "";
         } else {
           window.location.reload();
         }
